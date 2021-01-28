@@ -41,6 +41,11 @@ export class AppComponent implements OnInit {
       title: 'Offers',
       url: '/offer',
       icon: 'warning'
+    },
+    {
+      title: 'Profile',
+      url: '/profile',
+      icon: 'profile'
     }
   ];
 
