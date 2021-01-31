@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPageRoutingModule } from './login-routing.module';
+import { OrderHistoryPageRoutingModule } from './order-history-routing.module';
 
-import { LoginPage } from './login.page';
+import { OrderHistoryPage } from './order-history.page';
 import { FooterComponent } from '../footer/footer.component';
 
 @NgModule({
@@ -14,8 +14,8 @@ import { FooterComponent } from '../footer/footer.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    OrderHistoryPageRoutingModule
   ],
-  declarations: [LoginPage,FooterComponent]
+  declarations: [OrderHistoryPage,FooterComponent]
 })
-export class LoginPageModule {}
+export class OrderHistoryPageModule {}
