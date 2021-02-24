@@ -8,6 +8,7 @@ import { CartPageRoutingModule } from './cart-routing.module';
 
 import { CartPage } from './cart.page';
 import { FooterComponent } from '../footer/footer.component';
+import { HeaderComponent } from '../header/header.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { FooterComponent } from '../footer/footer.component';
     IonicModule,
     CartPageRoutingModule
   ],
-  declarations: [CartPage,FooterComponent]
+  declarations: [CartPage,FooterComponent,HeaderComponent]
 })
 export class CartPageModule {}

@@ -14,7 +14,7 @@ import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent,HeaderComponent,CardsComponent],
+  declarations: [AppComponent,CardsComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
