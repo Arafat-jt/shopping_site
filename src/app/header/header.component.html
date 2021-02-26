@@ -14,31 +14,33 @@
             All Categories
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Men</a>
-            <a class="dropdown-item" href="#">Women</a>
-            <a class="dropdown-item" href="#">Watches</a>
-            <a class="dropdown-item" href="#">Jackets</a>
+            <a class="dropdown-item" href="/mens">Men</a>
+            <a class="dropdown-item" href="/women">Women</a>
+            <a class="dropdown-item" href="/elec">Electronics</a>
+            <a class="dropdown-item" href="/jackets">Jackets</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Others</a>
+            <a class="dropdown-item" href="/others">Others</a>
           </div>
-        <li class="nav-item active">
+        <li>
+          <form class="form-inline my-2 my-lg-0" >
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+          <!-- <mdb-icon fas icon="user-circle"></mdb-icon> -->
+          </form>
+        </li>
+        <li class="nav-item active right">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
             <a class="nav-link" routerLink="/profile">Profile</a>
-        </li>
-        <li class="nav-item active">
+        </li> -->
+        <li class="nav-item active right">
           <a class="nav-link" routerLink="/cart">My Cart</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/order-history">My Oder History</a>
-        </li>
+        <!-- <li class="nav-item active">
+          <a class="nav-link" routerLink="/order-history">My Order History</a>
+        </li> -->
       </ul>
-      <form class="form-inline my-2 my-lg-0" >
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-        <!-- <mdb-icon fas icon="user-circle"></mdb-icon> -->
-      </form>
     </div>
   </nav>
 

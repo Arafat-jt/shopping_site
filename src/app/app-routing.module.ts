@@ -29,6 +29,26 @@ const routes: Routes = [
   {
     path: 'order-history',
     loadChildren: () => import('./order-history/order-history.module').then( m => m.OrderHistoryPageModule)
+  },
+  {
+    path: 'mens',
+    loadChildren: () => import('./mens/mens.module').then( m => m.MensPageModule)
+  },
+  {
+    path: 'women',
+    loadChildren: () => import('./women/women.module').then( m => m.WomenPageModule)
+  },
+  {
+    path: 'elec',
+    loadChildren: () => import('./elec/elec.module').then( m => m.ElecPageModule)
+  },
+  {
+    path: 'jackets',
+    loadChildren: () => import('./jackets/jackets.module').then( m => m.JacketsPageModule)
+  },
+  {
+    path: 'others',
+    loadChildren: () => import('./others/others.module').then( m => m.OthersPageModule)
   }
 
 
