@@ -7,25 +7,31 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/login">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            All Categories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Men</a>
+            <a class="dropdown-item" href="#">Women</a>
+            <a class="dropdown-item" href="#">Watches</a>
+            <a class="dropdown-item" href="#">Jackets</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Others</a>
+          </div>
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/profile.html">Men</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/women">Women</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/jacket">Jackets</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/watch">Watches</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/login">Login </a>
+          <a class="nav-link" routerLink="/login">Login</a>
         </li>
         <li class="nav-item active">
             <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/cart">My Cart</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/order-history">My Oder History</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" >

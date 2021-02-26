@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPageRoutingModule } from './login-routing.module';
+import { CartPageRoutingModule } from './cart-routing.module';
 
-import { LoginPage } from './login.page';
+import { CartPage } from './cart.page';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 
@@ -15,9 +15,8 @@ import { HeaderComponent } from '../header/header.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
-    FormsModule
+    CartPageRoutingModule
   ],
-  declarations: [LoginPage,FooterComponent,HeaderComponent]
+  declarations: [CartPage,FooterComponent,HeaderComponent]
 })
-export class LoginPageModule {}
+export class CartPageModule {}

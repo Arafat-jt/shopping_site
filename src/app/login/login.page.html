@@ -1,24 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content>
   <div class="row my-5">
-    <div class="col-md-4">
-           
+    <div class="col-sm-4">
     </div>
-    <div class="text-center p-4 col-md-4">
+    <div class="text-center p-4 col-sm-4">
         <div class="card bgr" style="width: 25rem; height: 20rem;">
             <div class="card-body">
                 <h5><b>Login to Shopping Planet</b></h5>
-                <input class="tags w-75 my-4 py-1" type="email" placeholder="Username or Email"><br>
-                <input class="tags w-75 mb-4 py-1" type="password" placeholder="Password"><br>
-                <a href="#"><button class="btn btn-danger w-75 mb-4 py-2 shadow-sm">Login</button></a>
+                <input class="tags w-75 my-4 py-1" name="email" [(ngModel)]="email" type="email" placeholder="Username or Email"><br>
+                <input class="tags w-75 mb-4 py-1" name="pass" [(ngModel)]="pass" type="password" placeholder="Password"><br>
+                  <button class="btn btn-danger w-75 mb-4 py-2 shadow-sm" (click)="login_fun()">Login</button>
                 <p>New to Shopping Planet? <span><a href="/signup">Create an Account</a></span></p>
             </div>
         </div>
     </div>
-</div>
+  </div>
+  <div class="fixed">
+    <app-footer></app-footer>
+  </div>
 </ion-content>
