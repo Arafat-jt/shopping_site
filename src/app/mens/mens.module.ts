@@ -8,7 +8,7 @@ import { MensPageRoutingModule } from './mens-routing.module';
 
 import { MensPage } from './mens.page';
 import {FooterComponent} from '../footer/footer.component'
-import {HeaderComponent} from '../header/header.component'
+import { HeaderComponent } from '../header/header.component';
 
 @NgModule({
   imports: [

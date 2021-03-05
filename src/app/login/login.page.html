@@ -2,20 +2,43 @@
 
 <ion-content>
   <div class="row my-5">
-    <div class="col-sm-4">
+    <div class="col-lg-4"> 
     </div>
-    <div class="text-center p-4 col-sm-4">
-        <div class="card bgr" style="width: 25rem; height: 20rem;">
-            <div class="card-body">
-                <h5><b>Login to Shopping Planet</b></h5>
-                <input class="tags w-75 my-4 py-1" name="email" [(ngModel)]="email" type="email" placeholder="Username or Email"><br>
-                <input class="tags w-75 mb-4 py-1" name="pass" [(ngModel)]="pass" type="password" placeholder="Password"><br>
-                  <button class="btn btn-danger w-75 mb-4 py-2 shadow-sm" (click)="login_fun()">Login</button>
-                <p>New to Shopping Planet? <span><a href="/signup">Create an Account</a></span></p>
-            </div>
+    <div class="text-center p-4 col-lg-4">
+      <div class="card mx-4 shadow">
+        <div class="card-body text-light text-center bg-dark">
+          <h3><b>Login to Shopping Planet</b></h3>
+          <input class="tags w-75 my-4 py-1 bg-light text-dark" name="email" [(ngModel)]="email" type="email" placeholder="Username or Email"><br>
+          <input class="tags w-75 mb-4 py-1 bg-light text-dark" name="pass" [(ngModel)]="pass" type="password" placeholder="Password"><br>
+            <button class="btn btn-warning w-75 mb-4 py-2 shadow-sm" (click)="login_fun()">Login</button>
+          <p>New to Shopping Planet? <span><a href="/signup">Create an Account</a></span></p>
         </div>
+      </div>
     </div>
   </div>
+
+  <!-- <ion-grid>
+    <ion-row class="my-5">
+      <ion-col>
+      </ion-col>
+      <ion-col class="text-center">
+        <div class="card mx-4 shadow">
+          <div class="card-body text-light bg-dark">
+              <h5><b>Login to Shopping Planet</b></h5>
+              <input class="tags w-75 my-4 py-1 bg-light" name="email" [(ngModel)]="email" type="email" placeholder="Username or Email"><br>
+              <input class="tags w-75 mb-4 py-1 bg-light" name="pass" [(ngModel)]="pass" type="password" placeholder="Password"><br>
+                <button class="btn btn-warning w-75 mb-4 py-2 shadow-sm" (click)="login_fun()">Login</button>
+              <p>New to Shopping Planet? <span><a href="/signup">Create an Account</a></span></p>
+          </div>
+      </div>
+      </ion-col>
+      <ion-col>   
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <br>
+
   <div class="fixed">
     <app-footer></app-footer>
   </div>

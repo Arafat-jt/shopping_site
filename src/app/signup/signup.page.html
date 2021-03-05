@@ -1,21 +1,20 @@
 <app-header></app-header>
 
 <ion-content>
-  <div class="row my-5">
-    <div class="col-md-4">
-           
+  <div class="row my-1">
+    <div class="col-lg-4">    
     </div>
-    <div class="text-center p-4 col-md-4">
-        <div class="card bgr" style="width: 25rem; height: 35rem;">
-            <div class="card-body">
-                <h5><b>Signup on Shopping Planet</b></h5>
-                <input class="tags w-75 my-4 py-1" name="username" [(ngModel)]="username" type="text" placeholder="UserName"><br>
-                <input class="tags w-75 mb-4 py-1" name="name" [(ngModel)]="name" type="text" placeholder="Full Name"><br>
-                <input class="tags w-75 mb-4 py-1" name="email" [(ngModel)]="email" type="email" placeholder="Email"><br>
-                <input class="tags w-75 mb-4 py-1" name="number" [(ngModel)]="number" type="number" placeholder="Mobile Number"><br>
-                <input class="tags w-75 mb-4 py-1" name="pass" [(ngModel)]="pass" type="password" placeholder="Password"><br>
-                <input class="tags w-75 mb-4 py-1" name="repass" [(ngModel)]="repass" type="password" placeholder="Re-enter Password"><br>
-                <button class="btn btn-danger w-75 mb-4 py-2 shadow-sm" (click)="signup_fun()">Signup</button>
+    <div class="text-center p-4 col-lg-4">
+        <div class="card mx-4 shadow">
+            <div class="card-body text-light text-center bg-dark">
+                <h3><b>SignUp on Shopping Planet</b></h3>
+                <input class="tags w-75 my-4 py-1 bg-light text-dark" name="username" [(ngModel)]="username" type="text" placeholder="UserName"><br>
+                <input class="tags w-75 mb-4 py-1 bg-light text-dark" name="name" [(ngModel)]="name" type="text" placeholder="Full Name"><br>
+                <input class="tags w-75 mb-4 py-1 bg-light text-dark" name="email" [(ngModel)]="email" type="email" placeholder="Email"><br>
+                <input class="tags w-75 mb-4 py-1 bg-light text-dark" name="number" [(ngModel)]="number" type="number" placeholder="Mobile Number"><br>
+                <input class="tags w-75 mb-4 py-1 bg-light text-dark" name="pass" [(ngModel)]="pass" type="password" placeholder="Password"><br>
+                <input class="tags w-75 mb-4 py-1 bg-light text-dark" name="repass" [(ngModel)]="repass" type="password" placeholder="Re-enter Password"><br>
+                <button class="btn btn-warning w-75 mb-4 py-2 shadow-sm" (click)="signup_fun()">Signup</button>
                 <p>Already Have an Account? <span><a href="/login">Login</a></span></p>
             </div>
         </div>
