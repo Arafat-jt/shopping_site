@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OthersPage implements OnInit {
 
-  constructor() { }
+  public othersCatalog = [];
+
+  constructor(private http: HttpClient) {
+    http.get("http://127.0.0.1:8000/othersdb/").subscribe((res:any) =>{
+        console.log(res);
+        for (let i of res.catalog) {
+          this.othersCatalog.push({
+            title: i.name,
+            color: i.color,
+            type: i.type,
+            Cost: i.Cost,
+            imgsrc: i.imgsrc
+          });
+        }
+      });
+    
+   }
 
   ngOnInit() {
   }

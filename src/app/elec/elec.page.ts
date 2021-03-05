@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
+
 
 @Component({
   selector: 'app-elec',
@@ -7,7 +10,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ElecPage implements OnInit {
 
-  constructor() { }
+  public elecCatalog = [];
+  public watchesCatalog = [];
+
+
+  constructor(private http: HttpClient) {
+    http.get("http://127.0.0.1:8000/elecdb/").subscribe((res:any) =>{
+        console.log(res);
+        for (let i of res.catalog) {
+          this.elecCatalog.push({
+            title: i.name,
+            color: i.color,
+            type: i.type,
+            Cost: i.Cost,
+            imgsrc: i.imgsrc
+          });
+        }
+      });
+    
+    this.http.get("http://127.0.0.1:8000/watchesdb/").subscribe((res:any) =>{
+      console.log(res);
+      for (let i of res.catalog) {
+        this.watchesCatalog.push({
+          title: i.name,
+          color: i.color,
+          type: i.type,
+          Cost: i.Cost,
+          imgsrc: i.imgsrc
+        });
+      }
+    });  
+   }
+
+   slideOptsOne = {
+    initialSlide: 0,
+    slidesPerView: 1,
+    autoplay:true
+   };
+
+  getRandom(){
+   return _.shuffle(this.elecCatalog);
+  }
 
   ngOnInit() {
   }

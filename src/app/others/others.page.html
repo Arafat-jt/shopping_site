@@ -6,30 +6,29 @@
     <h5>Check Out Variety Below</h5>
     <img src="assets\j.png" class="img-fluid" alt="Variety Infinite" style="width: 80%;height: 10%;">
   </div>
-  <!-- <ion-row>
-    <ion-col class="col-md-4" *ngFor="let card of courselist.slice(0,8)">
-      <ion-card>
-        <img [src]="card.imageSource" style="width: 100%;" alt="online shopping display image">
-        <ion-card-header>
-          <ion-card-subtitle>
+
+  <!-- Catalog -->
+  <ion-row>
+    <ion-col class="col-md-3 " *ngFor="let card of othersCatalog">
+      <ion-card class="">
+        <img [src]="card.imgsrc" style="width: 100%;" alt="online shopping display image">
+        <ion-card-header class="mt-auto mb-auto">
+          <ion-card-subtitle >
             {{card.title}}
+            <br>
+            <b>Color:</b> {{card.color}}
           </ion-card-subtitle>
-          <ion-card-title>
-            <b>Cost: {{card.cost}}</b>
+          <ion-card-title >
+            Type: {{card.type}} <br>
+            <b>Cost: ₹{{card.Cost}}/-</b>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>
-  </ion-row> -->
-
-  <ion-row>
-    <ion-col class="text-center">
-      <ion-button>
-        View All
-      </ion-button>
-    </ion-col>
   </ion-row>
   
+  <br>
+
   <div class="fixed">
     <app-footer></app-footer>
   </div>

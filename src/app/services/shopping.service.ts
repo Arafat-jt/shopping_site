@@ -9,6 +9,6 @@ export class ShoppingService {
   constructor(private http: HttpClient) {   }
 
   getcatalog(){
-    return this.http.get('https://www.autonise.com/api/users/getCatalog');
+    return this.http.get('http://127.0.0.1:8000/static/mendb');
   }
 }
