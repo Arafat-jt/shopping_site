@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class SignupPage implements OnInit {
   user : any;
   postdata = {}
 
-  constructor(private http: HttpClient, public router: Router) {}
+  constructor(private http: HttpClient, public router: Router, public toastC: ToastController) {}
 
   ngOnInit() {
   }
@@ -27,37 +28,52 @@ export class SignupPage implements OnInit {
   signup_fun()
   {
     if(this.pass == this.repass){
-      
-      this.postdata = 
-      {
-        'add':'true',
-        'user':
+      if(this.email != "" && this.pass != "" && this.username != "" && this.name != "" && this.number != "" && this.repass != ""){
+        this.postdata = 
         {
-          'email': this.email,
-          'pass': this.pass,
-          'username': this.username,
-          'name': this.name,
-          'number': this.number
+          'add':'true',
+          'user':
+          {
+            'email': this.email,
+            'pass': this.pass,
+            'username': this.username,
+            'name': this.name,
+            'number': this.number
+          }
         }
+    
+        this.http.post("http://127.0.0.1:8000/usersignup/", this.postdata).subscribe(data =>{
+          console.log(data);
+          this.user = data;
+          if(this.user['status'] == 'User already exists')
+          {
+            this.presentToast("You Already Have An Account!")
+            this.presentToast("Login here...")
+            this.router.navigate(['/login']);
+          }
+          else if(this.user['status'] == 'User Added')
+          {
+            this.presentToast("Registered Successfully!")
+            this.router.navigate(['/home']);
+          }          
+        });
       }
-  
-      this.http.post("http://127.0.0.1:8000/usersignup/", this.postdata).subscribe(data =>{
-        console.log(data);
-        this.user = data;
-        if(this.user['status'] == 'User already exists')
-        {
-          this.router.navigate(['/login']);
-        }
-        else if(this.user['status'] == 'User Added')
-        {
-          this.router.navigate(['/home']);
-        }          
-      })
+      else{
+        this.presentToast("Fill every Detail!")
+      }
     }
     else
     {
-      console.log("password should match in both places");
+      this.presentToast("Password should match in both Places!")
     }
   } 
+
+  async presentToast(msg){
+    const toast =  await this.toastC.create({
+      message: msg,
+      duration: 2000
+    });
+    toast.present();
+  }
 
 }
