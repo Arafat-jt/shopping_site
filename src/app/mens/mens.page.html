@@ -2,9 +2,17 @@
 
 <ion-content>
   <div class="text-center m-3">
+    <!-- 1st title -->
     <h1 class="text-center">Men's Fashion</h1>
     <img src="assets\mens.jpg" class="img-fluid" alt="online shopping display image" style="width: 70%; height: 45%;">
   </div>
+
+  <hr class="bg-light mx-5">
+  <!-- 2nd title -->
+  <div class="text-center">
+    <h2 style="color:  #f7ce3e;">A Catalogue Of Our Products</h2>
+  </div>
+  <hr class="bg-light mx-5">
 
   <!-- Catalog -->
   <ion-row>
@@ -20,6 +28,8 @@
           <ion-card-title >
             Size: {{card.size}} <br>
             <b>Cost: ₹{{card.Cost}}/-</b>
+            <br>
+            <button class="btn btn-warning float-right my-3">Add to Cart</button>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
@@ -28,9 +38,12 @@
   
   <br>
 
+  <hr class="bg-light mx-5">
+  <!-- 3rd title -->
   <div class="text-center">
     <h2 style="color:  #f7ce3e;">A Carousal Of Our Mens Wear</h2>
   </div>
+  <hr class="bg-light mx-5">
 
   <!-- Ionic Carousal -->
   <ion-slides [options]="slideOptsOne" loop="true">
@@ -48,6 +61,8 @@
               <ion-card-title >
                 Size: {{card.size}} <br>
                 <b>Cost: ₹{{card.Cost}}/-</b>
+                <br>
+                <button class="btn btn-warning my-3">Add to Cart</button>
               </ion-card-title>
             </ion-card-header>
           </ion-card>
@@ -68,6 +83,8 @@
               <ion-card-title >
                 Size: {{card.size}} <br>
                 <b>Cost: ₹{{card.Cost}}/-</b>
+                <br>
+                <button class="btn btn-warning my-3">Add to Cart</button>
               </ion-card-title>
             </ion-card-header>
           </ion-card>
@@ -88,6 +105,8 @@
               <ion-card-title >
                 Size: {{card.size}} <br>
                 <b>Cost: ₹{{card.Cost}}/-</b>
+                <br>
+                <button class="btn btn-warning my-3">Add to Cart</button>
               </ion-card-title>
             </ion-card-header>
           </ion-card>

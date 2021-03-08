@@ -17,6 +17,7 @@ export class JacketsPage implements OnInit {
         console.log(res);
         for (let i of res.catalog) {
           this.jacketsCatalog.push({
+            id: i._id,
             title: i.name,
             color: i.color,
             size: i.Size,

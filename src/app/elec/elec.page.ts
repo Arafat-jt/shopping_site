@@ -19,6 +19,7 @@ export class ElecPage implements OnInit {
         console.log(res);
         for (let i of res.catalog) {
           this.elecCatalog.push({
+            id: i._id,
             title: i.name,
             color: i.color,
             type: i.type,
@@ -32,6 +33,7 @@ export class ElecPage implements OnInit {
       console.log(res);
       for (let i of res.catalog) {
         this.watchesCatalog.push({
+          id: i._id,
           title: i.name,
           color: i.color,
           type: i.type,
@@ -52,7 +54,6 @@ export class ElecPage implements OnInit {
    return _.shuffle(this.elecCatalog);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

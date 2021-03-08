@@ -16,6 +16,7 @@ export class OthersPage implements OnInit {
         for (let i of res.catalog) {
           this.othersCatalog.push({
             title: i.name,
+            id: i._id,
             color: i.color,
             type: i.type,
             Cost: i.Cost,

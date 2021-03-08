@@ -11,12 +11,14 @@ import * as _ from 'lodash';
 export class HomePage implements OnInit {
 
   public itemlist = [];
+  postdata = {}
 
   constructor(private http: HttpClient) {
     http.get("http://127.0.0.1:8000/mendb/").subscribe((res:any) =>{
       console.log(res);
       for (let i of res.catalog) {
         this.itemlist.push({
+          id: i._id,
           title: i.name,
           color: i.color,
           size: i.Size,
@@ -30,6 +32,7 @@ export class HomePage implements OnInit {
       console.log(res);
       for (let i of res.catalog) {
         this.itemlist.push({
+          id: i._id,
           title: i.name,
           color: i.color,
           Cost: i.Cost,
@@ -42,6 +45,7 @@ export class HomePage implements OnInit {
       console.log(res);
       for (let i of res.catalog) {
         this.itemlist.push({
+          id: i._id,
           title: i.name,
           color: i.color,
           type: i.type,
@@ -55,6 +59,7 @@ export class HomePage implements OnInit {
         console.log(res);
         for (let i of res.catalog) {
           this.itemlist.push({
+            id: i._id,
             title: i.name,
             color: i.color,
             size: i.Size,
@@ -68,6 +73,7 @@ export class HomePage implements OnInit {
         console.log(res);
         for (let i of res.catalog) {
           this.itemlist.push({
+            id: i._id,
             title: i.name,
             color: i.color,
             type: i.type,
@@ -81,6 +87,7 @@ export class HomePage implements OnInit {
       console.log(res);
       for (let i of res.catalog) {
         this.itemlist.push({
+          id: i._id,
           title: i.name,
           color: i.color,
           type: i.type,
@@ -93,7 +100,21 @@ export class HomePage implements OnInit {
 
   getRandom(){
     return _.shuffle(this.itemlist);
-   } 
+  } 
+
+  // cartfun(productid){
+
+  //   this.postdata={
+  //     'add':'true',
+  //     'user':{
+  //       'email': this.email,
+  //       'pass': this.pass,
+  //       'product_id': productid
+  //     }
+  //   }
+
+  //   this.http.post("http://127.0.0.1:8000/addtocart/", this.postdata)
+  // }
 
   ngOnInit() {
   }

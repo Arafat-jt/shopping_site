@@ -16,6 +16,7 @@ export class MensPage implements OnInit {
         console.log(res);
         for (let i of res.catalog) {
           this.menCatalog.push({
+            id: i._id,
             title: i.name,
             color: i.color,
             size: i.Size,

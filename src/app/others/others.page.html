@@ -3,9 +3,17 @@
 <ion-content>
   <div class="text-center m-3">
     <h1 class="text-center">A Store Full of all Latest Items</h1>
-    <h5>Check Out Variety Below</h5>
     <img src="assets\j.png" class="img-fluid" alt="Variety Infinite" style="width: 80%;height: 10%;">
   </div>
+
+  <!-- 2nd title -->
+  <hr class="bg-light mx-5">
+  <div class="text-center">
+    <h2 style="color:  #f7ce3e;">Check Out Variety Below</h2>
+  </div>
+  <hr class="bg-light mx-5">
+
+  <br>
 
   <!-- Catalog -->
   <ion-row>
@@ -21,6 +29,8 @@
           <ion-card-title >
             Type: {{card.type}} <br>
             <b>Cost: ₹{{card.Cost}}/-</b>
+            <br>
+            <button class="btn btn-warning float-right my-3">Add to Cart</button>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
