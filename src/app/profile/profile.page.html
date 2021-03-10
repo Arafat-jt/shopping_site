@@ -8,12 +8,13 @@
       <div class="card mx-4 shadow">
         <div class="card-body text-light text-center bg-dark">
           <h3><b>Update Profile</b></h3>
-          <input class="tags w-75 my-4 py-1 bg-light text-dark" type="text" placeholder="Username"><br>
-          <input class="tags w-75 mb-4 py-1 bg-light text-dark" type="text" placeholder="Full Name" disabled><br>
-          <input class="tags w-75 mb-4 py-1 bg-light text-dark" type="email" placeholder="Email Address" disabled><br>
-          <input class="tags w-75 mb-4 py-1 bg-light text-dark" type="number" placeholder="Contact No"><br>
-          <input class="tags w-75 mb-4 py-1 bg-light text-dark" type="password" placeholder="Password"><br>
-          <a href="/home"><button class="btn btn-warning w-75 mb-4 py-2 shadow-sm">Save Details</button></a>
+          <input class="tags w-75 my-4 py-1 bg-light text-dark" name="email" [(ngModel)]="email" type="email" placeholder="Registered Email Address"><br>
+          <input class="tags w-75 mb-4 py-1 bg-light text-dark" name="pass" [(ngModel)]="pass" type="password" placeholder="Password"><br>
+          <hr class="bg-light">
+          <input class="tags w-75 my-4 py-1 bg-light text-dark" name="username" [(ngModel)]="username" type="text" placeholder="Username"><br>
+          <input class="tags w-75 mb-4 py-1 bg-light text-dark" name="name" [(ngModel)]="name" type="text" placeholder="Full Name" ><br>
+          <input class="tags w-75 mb-4 py-1 bg-light text-dark" name="number" [(ngModel)]="number" type="number" placeholder="Contact No"><br>
+          <button class="btn btn-warning w-75 mb-4 py-2 shadow-sm" (click)="update()">Save Details</button>
         </div>
       </div>
     </div>

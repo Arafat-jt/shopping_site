@@ -30,7 +30,7 @@
             Type: {{card.type}} <br>
             <b>Cost: ₹{{card.Cost}}/-</b>
             <br>
-            <button class="btn btn-warning float-right my-3">Add to Cart</button>
+            <button class="btn btn-warning float-right my-3" (click)="cartfun(card.id)">Add to Cart</button>
           </ion-card-title>
         </ion-card-header>
       </ion-card>

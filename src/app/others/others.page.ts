@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
+import { ShoppingService } from '../services/shopping.service';
 
 @Component({
   selector: 'app-others',
@@ -8,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OthersPage implements OnInit {
 
+  postdata = {}
   public othersCatalog = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public toastc: ToastController, public service: ShoppingService) {
     http.get("http://127.0.0.1:8000/othersdb/").subscribe((res:any) =>{
         console.log(res);
         for (let i of res.catalog) {
@@ -27,7 +30,44 @@ export class OthersPage implements OnInit {
     
    }
 
+   cartfun(productid: string){
+    if(this.service.current_mail != "" && this.service.current_pass != "")
+    {
+      this.postdata={
+        'add':'true',
+        'user':{
+          'email': this.service.current_mail,
+          'pass': this.service.current_pass,
+          'product_id': productid
+        }
+      }
+
+      this.http.post("http://127.0.0.1:8000/addtocart/", this.postdata).subscribe(data =>{
+        console.log(data);     
+        if (data['status'] == "Successfully incremented product quantity" || data['status'] == "Successfully assigned product to user") {
+          this.presentToast("Product Added to Cart \nGo See \"My Cart\" for More Details");
+        }   
+      });
+            
+    }
+    else{
+      this.presentToast("Login First to use the Cart!");
+      // this.router.navigate(['/login']);
+    }
+  } 
+  
   ngOnInit() {
+  }
+
+  async presentToast(msg){
+    const toast =  await this.toastc.create({
+      message: msg,
+      duration: 2000,
+      position: "top",
+      color: "dark",
+      cssClass: 'customclass'
+    });
+    toast.present();
   }
 
 }

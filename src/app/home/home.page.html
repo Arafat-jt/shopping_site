@@ -13,8 +13,11 @@
   <h2 class="text-center text-warning">Our Best Sellers</h2>
   <hr class="bg-light mx-5">
   
+  <br>
+  
+  <!-- a catalog of best sellers -->
   <ion-row>
-    <ion-col class="col-md-4" *ngFor="let card of getRandom().slice(0,9)">
+    <ion-col class="col-md-4" *ngFor="let card of itemlist.slice(0,9)">
       <ion-card>
         <img [src]="card.imgsrc" style="width: 100%;" alt="online shopping display image">
         <ion-card-header>
@@ -23,20 +26,88 @@
           </ion-card-subtitle>
           <ion-card-title>
             <b>Cost: ₹{{card.Cost}}</b> 
-            <button class="btn float-right my-3" onclick="cartfun(card.id)">Add to Cart</button>
+            <button class="btn float-right my-3" (click)="cartfun(card.id)">Add to Cart</button>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>
   </ion-row>
 
+  <br>
+
+  <!-- button takes to any one of the pages -->
   <ion-row>
     <ion-col class="text-center">
-      <button class="btn">
+      <button class="btn" (click)="random_page()">
         View All
       </button>
     </ion-col>
   </ion-row>
+  
+  <br>
+  
+  <!-- Ionic Carousal of user reviews-->
+  <ion-slides [options]="slideOptsOne" loop="true">
+    <ion-slide>
+      <div class="silde row">
+        <ion-col class="col d-flex align-items-stretch" *ngFor="let i of [1,2,3]">
+          <ion-card class="d-flex flex-column">
+            <div class="text-center py-3">
+              <img src="assets\user{{i}}.png" style="width: 30%;" alt="online shopping display image">
+            </div>
+            <ion-card-header class="mt-auto mb-auto">
+              <ion-card-title *ngIf="i == 1">
+                Mayank Kumar Singh
+              </ion-card-title>
+              <ion-card-title *ngIf="i == 2">
+                Pragya Kumari
+              </ion-card-title>
+              <ion-card-title *ngIf="i == 3">
+                Mohammed Rahil
+              </ion-card-title>
+              <br>
+              <ion-card-title >
+                A very Good website for good New Developers!
+              </ion-card-title>
+              <ion-card-subtitle >
+                A very thoughtful website made by these young developers! There's even a light theme switcher for users' choice of theme on the website
+                A few bugs here and there but over all a good Start fot them
+              </ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="silde row">
+        <ion-col class="col d-flex align-items-stretch" *ngFor="let i of [4,5,6]">
+          <ion-card class="d-flex flex-column">
+            <div class="text-center py-3">
+              <img src="assets\user{{i}}.png" style="width: 30%;" alt="online shopping display image">
+            </div>
+            <ion-card-header class="mt-auto mb-auto">
+              <ion-card-title *ngIf="i == 4">
+                Ritesh Goru
+              </ion-card-title>
+              <ion-card-title *ngIf="i == 5">
+                Shantanu Mahakale
+              </ion-card-title>
+              <ion-card-title *ngIf="i == 6">
+                M S R Dinesh
+              </ion-card-title>
+              <ion-card-title >
+                A very Good website by New Developers!
+              </ion-card-title>
+              <ion-card-subtitle >
+                A very thoughtful website made by these young developers! There's even a light theme switcher for users' choice of theme on the website
+                A few bugs here and there but over all a good Start fot them
+              </ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </div>
+    </ion-slide>
+  </ion-slides>
   
   <br>
 

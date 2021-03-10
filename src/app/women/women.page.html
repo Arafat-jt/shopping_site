@@ -28,7 +28,7 @@
           <ion-card-title >
             <b>Cost: ₹{{card.Cost}}/-</b>
             <br>
-            <button class="btn btn-warning float-right my-3">Add to Cart</button>
+            <button class="btn btn-warning float-right my-3" (click)="cartfun(card.id)">Add to Cart</button>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
@@ -60,7 +60,7 @@
               <ion-card-title >
                 <b>Cost: ₹{{card.Cost}}/-</b>
                 <br>
-                <button class="btn btn-warning my-3">Add to Cart</button>
+                <button class="btn btn-warning my-3" (click)="cartfun(card.id)">Add to Cart</button>
               </ion-card-title>
             </ion-card-header>
           </ion-card>
@@ -81,7 +81,7 @@
               <ion-card-title >
                 <b>Cost: ₹{{card.Cost}}/-</b>
                 <br>
-                <button class="btn btn-warning my-3">Add to Cart</button>
+                <button class="btn btn-warning my-3" (click)="cartfun(card.id)">Add to Cart</button>
               </ion-card-title>
             </ion-card-header>
           </ion-card>
@@ -103,7 +103,7 @@
                 <!-- Size: {{card.size}} <br> -->
                 <b>Cost: ₹{{card.Cost}}/-</b>
                 <br>
-                <button class="btn btn-warning my-3">Add to Cart</button>
+                <button class="btn btn-warning my-3" (click)="cartfun(card.id)">Add to Cart</button>
               </ion-card-title>
             </ion-card-header>
           </ion-card>

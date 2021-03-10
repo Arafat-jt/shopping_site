@@ -15,7 +15,7 @@
 
   <!-- Catalog -->
   <ion-row>
-    <ion-col class="col-md-3 " *ngFor="let card of getRandom()">
+    <ion-col class="col-md-3 " *ngFor="let card of elecCatalog">
       <ion-card class="">
         <img [src]="card.imgsrc" style="width: 100%;" alt="online shopping display image">
         <ion-card-header class="mt-auto mb-auto">
@@ -28,7 +28,7 @@
             Type: {{card.type}} <br>
             <b>Cost: ₹{{card.Cost}}/-</b>
             <br>
-            <button class="btn btn-warning float-right my-3">Add to Cart</button>
+            <button class="btn btn-warning float-right my-3" (click)="cartfun(card.id)">Add to Cart</button>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
@@ -61,7 +61,7 @@
                 Type: {{card.type}} <br>
                 <b>Cost: ₹{{card.Cost}}/-</b>
                 <br>
-                <button class="btn btn-warning my-3">Add to Cart</button>
+                <button class="btn btn-warning my-3" (click)="cartfun(card.id)">Add to Cart</button>
               </ion-card-title>
             </ion-card-header>
           </ion-card>
@@ -83,7 +83,7 @@
                 Type: {{card.type}} <br>
                 <b>Cost: ₹{{card.Cost}}/-</b>
                 <br>
-                <button class="btn btn-warning my-3">Add to Cart</button>
+                <button class="btn btn-warning my-3" (click)="cartfun(card.id)">Add to Cart</button>
               </ion-card-title>
             </ion-card-header>
           </ion-card>
@@ -105,7 +105,7 @@
                 Type: {{card.type}} <br>
                 <b>Cost: ₹{{card.Cost}}/-</b>
                 <br>
-                <button class="btn btn-warning my-3">Add to Cart</button>
+                <button class="btn btn-warning my-3" (click)="cartfun(card.id)">Add to Cart</button>
               </ion-card-title>
             </ion-card-header>
           </ion-card>
