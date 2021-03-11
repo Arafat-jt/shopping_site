@@ -24,7 +24,7 @@ export class HomePage implements OnInit {
    };
    
   constructor(private http: HttpClient, public service: ShoppingService, public toastc: ToastController, public router: Router) {
-    http.get("http://127.0.0.1:8000/mendb/").subscribe((res:any) =>{
+    http.get("http://127.0.0.1:8000/api/mendb/").subscribe((res:any) =>{
       console.log(res);
       for (let i of res.catalog) {
         this.itemlist.push({
@@ -38,7 +38,7 @@ export class HomePage implements OnInit {
       }
     });
 
-    http.get("http://127.0.0.1:8000/womendb/").subscribe((res:any) =>{
+    http.get("http://127.0.0.1:8000/api/womendb/").subscribe((res:any) =>{
       console.log(res);
       for (let i of res.catalog) {
         this.itemlist.push({
@@ -51,7 +51,7 @@ export class HomePage implements OnInit {
       }
     });
 
-    http.get("http://127.0.0.1:8000/othersdb/").subscribe((res:any) =>{
+    http.get("http://127.0.0.1:8000/api/othersdb/").subscribe((res:any) =>{
       console.log(res);
       for (let i of res.catalog) {
         this.itemlist.push({
@@ -65,7 +65,7 @@ export class HomePage implements OnInit {
       }
     });
 
-    http.get("http://127.0.0.1:8000/jacketsdb/").subscribe((res:any) =>{
+    http.get("http://127.0.0.1:8000/api/jacketsdb/").subscribe((res:any) =>{
         console.log(res);
         for (let i of res.catalog) {
           this.itemlist.push({
@@ -123,7 +123,7 @@ export class HomePage implements OnInit {
         }
       }
 
-      this.http.post("http://127.0.0.1:8000/addtocart/", this.postdata).subscribe(data =>{
+      this.http.post("http://127.0.0.1:8000/api/addtocart/", this.postdata).subscribe(data =>{
         this.response = data;
         console.log(this.response);     
         if (this.response['status'] == "Successfully incremented product quantity" || this.response['status'] == "Successfully assigned product to user") {

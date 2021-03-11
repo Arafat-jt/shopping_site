@@ -43,7 +43,7 @@ export class ProfilePage implements OnInit {
           }
         }
 
-        this.http.post("http://127.0.0.1:8000/updateprofile/", this.postdata).subscribe(data => {
+        this.http.post("http://127.0.0.1:8000/api/updateprofile/", this.postdata).subscribe(data => {
           console.log(data);
           if (data['status'] == "Credentials updated") {
               this.presentToast2("Successfully Saved");

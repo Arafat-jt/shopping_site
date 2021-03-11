@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
         }
       }
 
-      this.http.post("http://127.0.0.1:8000/userlogin/", this.postdata).subscribe(data =>{
+      this.http.post("http://127.0.0.1:8000/api/userlogin/", this.postdata).subscribe(data =>{
         this.user = data;  
         console.log(this.user);
         if(this.user['status'] == 'User already exists')

@@ -44,7 +44,7 @@ export class SignupPage implements OnInit {
           }
         }
     
-        this.http.post("http://127.0.0.1:8000/usersignup/", this.postdata).subscribe(data =>{
+        this.http.post("http://127.0.0.1:8000/api/usersignup/", this.postdata).subscribe(data =>{
           console.log(data);
           this.user = data;
           if(this.user['status'] == 'User already exists')
