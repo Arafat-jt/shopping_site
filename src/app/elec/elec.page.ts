@@ -18,7 +18,7 @@ export class ElecPage implements OnInit {
 
 
   constructor(private http: HttpClient, public toastc: ToastController, public service: ShoppingService) {
-    http.get("http://127.0.0.1:8000/elecdb/").subscribe((res:any) =>{
+    http.get("http://127.0.0.1:8000/api/elecdb/").subscribe((res:any) =>{
         console.log(res);
         for (let i of res.catalog) {
           this.elecCatalog.push({
@@ -33,7 +33,7 @@ export class ElecPage implements OnInit {
         this.elecCatalog = _.shuffle(this.elecCatalog);
       });
     
-    this.http.get("http://127.0.0.1:8000/watchesdb/").subscribe((res:any) =>{
+    this.http.get("http://127.0.0.1:8000/api/watchesdb/").subscribe((res:any) =>{
       console.log(res);
       for (let i of res.catalog) {
         this.watchesCatalog.push({
@@ -66,7 +66,7 @@ export class ElecPage implements OnInit {
         }
       }
 
-      this.http.post("http://127.0.0.1:8000/addtocart/", this.postdata).subscribe(data =>{
+      this.http.post("http://127.0.0.1:8000/api/addtocart/", this.postdata).subscribe(data =>{
         console.log(data);     
         if (data['status'] == "Successfully incremented product quantity" || data['status'] == "Successfully assigned product to user") {
           this.presentToast("Product Added to Cart \nGo See \"My Cart\" for More Details");

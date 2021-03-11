@@ -16,7 +16,7 @@ export class JacketsPage implements OnInit {
   public jacketsCatalog = [];
 
   constructor(private http: HttpClient, public toastc: ToastController, public service: ShoppingService) {
-    http.get("http://127.0.0.1:8000/jacketsdb/").subscribe((res:any) =>{
+    http.get("http://127.0.0.1:8000/api/jacketsdb/").subscribe((res:any) =>{
         console.log(res);
         for (let i of res.catalog) {
           this.jacketsCatalog.push({
@@ -44,7 +44,7 @@ export class JacketsPage implements OnInit {
         }
       }
 
-      this.http.post("http://127.0.0.1:8000/addtocart/", this.postdata).subscribe(data =>{
+      this.http.post("http://127.0.0.1:8000/api/addtocart/", this.postdata).subscribe(data =>{
         console.log(data);     
         if (data['status'] == "Successfully incremented product quantity" || data['status'] == "Successfully assigned product to user") {
           this.presentToast("Product Added to Cart \nGo See \"My Cart\" for More Details");

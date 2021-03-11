@@ -29,7 +29,7 @@ export class CartPage implements OnInit {
         }
       }
 
-      http.post("http://127.0.0.1:8000/mycart/", this.postdata).subscribe( (data: any) => {
+      http.post("http://127.0.0.1:8000/api/mycart/", this.postdata).subscribe( (data: any) => {
         console.log(data);
         for (let i of data.catalog) {
           this.userProducts.push({
