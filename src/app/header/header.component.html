@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3" style="background-color: #000000;">
-      <img src="assets\icon\Logo.png" alt="Logo" style="height: 4%;width: 4%;">
+      <img src="assets\icon\Logo.png" alt="Logo" style="height: 3%;width: 4%;">
       <a class="navbar-brand font-weight-bold col-md-2 text-center size" style="color: #f7ce3e;" routerLink="/home">Shopping Planet</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -7,45 +7,39 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <ul class="nav-item active">
-          <a class="nav-link size1" routerLink="/home">Home <span class="sr-only">(current)</span></a>
-        </ul>
         <li class="nav-item dropdown size1">
-          <a class="nav-link dropdown-toggle active size1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle active size1" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             All Categories
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/mens">Men</a>
-            <a class="dropdown-item" href="/women">Women</a>
-            <a class="dropdown-item" href="/elec">Electronics</a>
-            <a class="dropdown-item" href="/jackets">Jackets</a>
+          <div class="dropdown-menu dropdown-content bg-dark" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-light" routerLink="/mens">Men</a>
+            <a class="dropdown-item text-light" routerLink="/women">Women</a>
+            <a class="dropdown-item text-light" routerLink="/elec">Electronics</a>
+            <a class="dropdown-item text-light" routerLink="/jackets">Jackets</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/others">Others</a>
+            <a class="dropdown-item text-light" routerLink="/others">Others</a>
           </div>
         </li>
-        <li class="nav-item active right">
-          <a class="nav-link" routerLink="/login">Login</a>
-        </li>
-        <!-- <li class="nav-item active">
-            <a class="nav-link" routerLink="/profile">Profile</a>
-        </li> -->
-        <li class="nav-item active right">
-          <a class="nav-link" routerLink="/cart">My Cart</a>
-        </li>
-        <!-- <li class="nav-item active">
-
-          <a class="nav-link" routerLink="/order-history">My Order History</a>
-        </li> -->
-
       </ul>
-        <ion-icon name="search-outline"></ion-icon>
 
-      <!-- <form class="form-inline my-2 my-lg-0" >
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-        <mdb-icon fas icon="user-circle"></mdb-icon>
-        </form> -->
+      <ion-label class="text-white">Light Mode</ion-label>
+      <ion-toggle (ionChange)="lighttheme($event)"></ion-toggle>
 
+      <div class="dropdown px-2 mt-auto" >
+        <ion-icon name="person" class="px-2 dropbtn"></ion-icon>
+        <div class="dropdown-content">
+          <a class="nav-link" routerLink="/login">Login</a>
+          <a class="nav-link" routerLink="/profile">Update Profile</a>
+          <a class="nav-link" routerLink="/order-history">My Order History</a>
+          <a class="nav-link" routerLink="/cart">My Cart</a>
+        </div>
+      </div>
+
+      <form class="form-inline my-lg-0" >
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> 
+        <ion-icon name="search" class="px-2"></ion-icon>
+      </form>
+      
     </div>
   </nav>
 

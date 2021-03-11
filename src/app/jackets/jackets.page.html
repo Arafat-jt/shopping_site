@@ -2,33 +2,112 @@
 
 <ion-content>
   <div class="text-center m-3">
-    <h1 class="text-center">Latest Jackets</h1>
+    <!-- 1st title -->
+    <h1 style="color:  #f7ce3e;">Latest Jackets</h1>
     <img src="assets\jack 1.png" class="img-fluid" alt="online shopping display image" style="width: 80%;height: 10%;">
   </div>
-  <!-- <ion-row>
-    <ion-col class="col-md-4" *ngFor="let card of courselist.slice(0,8)">
-      <ion-card>
-        <img [src]="card.imageSource" style="width: 100%;" alt="online shopping display image">
-        <ion-card-header>
-          <ion-card-subtitle>
+
+  <hr class="bg-light mx-5">
+  <!-- 2nd title -->
+  <div class="text-center">
+    <h2 style="color:  #f7ce3e;">A Catalogue Of Our Products</h2>
+  </div>
+  <hr class="bg-light mx-5">
+
+  <!-- Catalog -->
+  <ion-row>
+    <ion-col class="col-md-3 " *ngFor="let card of jacketsCatalog">
+      <ion-card class="">
+        <img [src]="card.imgsrc" style="width: 100%;" alt="online shopping display image">
+        <ion-card-header class="mt-auto mb-auto">
+          <ion-card-subtitle >
             {{card.title}}
+            <br>
+            <b>Color:</b> {{card.color}}
           </ion-card-subtitle>
-          <ion-card-title>
-            <b>Cost: {{card.cost}}</b>
+          <ion-card-title >
+            Size: {{card.size}} <br>
+            <b>Cost: ₹{{card.Cost}}/-</b>
+            <br>
+            <button class="btn btn-warning float-right my-3" (click)="cartfun(card.id)">Add to Cart</button>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>
-  </ion-row> -->
-
-  <ion-row>
-    <ion-col class="text-center">
-      <ion-button>
-        View All
-      </ion-button>
-    </ion-col>
   </ion-row>
+
+  <!-- <br>
+
+  <div class="text-center">
+    <h2 style="color:  #f7ce3e;">A Carousal Of Our Mens Wear</h2>
+  </div> -->
+
+  <!-- Ionic Carousal -->
+  <!-- <ion-slides [options]="slideOptsOne" loop="true">
+    <ion-slide>
+      <div class="silde row">
+        <ion-col class="col d-flex align-items-stretch" *ngFor="let card of menCatalog.slice(0,3)">
+          <ion-card class="d-flex flex-column">
+            <img [src]="card.imgsrc" style="width: 100%;" alt="online shopping display image">
+            <ion-card-header class="mt-auto mb-auto">
+              <ion-card-subtitle >
+                {{card.title}}
+                <br>
+                <b>Color:</b> {{card.color}}
+              </ion-card-subtitle>
+              <ion-card-title >
+                Size: {{card.size}} <br>
+                <b>Cost: ₹{{card.Cost}}/-</b>
+              </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="silde row">
+        <ion-col class="col d-flex align-items-stretch" *ngFor="let card of menCatalog.slice(3,6)">
+          <ion-card class="d-flex flex-column">
+            <img [src]="card.imgsrc" style="width: 100%;" alt="online shopping display image">
+            <ion-card-header class="mt-auto mb-auto">
+              <ion-card-subtitle >
+                {{card.title}}
+                <br>
+                <b>Color:</b> {{card.color}}
+              </ion-card-subtitle>
+              <ion-card-title >
+                Size: {{card.size}} <br>
+                <b>Cost: ₹{{card.Cost}}/-</b>
+              </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="silde row">
+        <ion-col class="col d-flex align-items-stretch" *ngFor="let card of menCatalog.slice(6,9)">
+          <ion-card class="d-flex flex-column">
+            <img [src]="card.imgsrc" style="width: 100%;" alt="online shopping display image">
+            <ion-card-header class="mt-auto mb-auto">
+              <ion-card-subtitle >
+                {{card.title}}
+                <br>
+                <b>Color:</b> {{card.color}}
+              </ion-card-subtitle>
+              <ion-card-title >
+                Size: {{card.size}} <br>
+                <b>Cost: ₹{{card.Cost}}/-</b>
+              </ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </div>
+    </ion-slide>
+  </ion-slides> -->
   
+  <br>
+
   <div class="fixed">
     <app-footer></app-footer>
   </div>

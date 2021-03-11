@@ -1,164 +1,117 @@
 <app-header></app-header>
 
 <ion-content>
-  <img src="assets\shopping.jpg" class="img-fluid" alt="online shopping display image" style="width: 100%; height: 65%;">
-  <!-- <ion-content class="text-center"> -->
-  <h2 class="text-center">Our Best Sellers</h2>
-  <p class="text-center"><i> ipsum dolor sit amet consectetur adipisicing elit. Saepe, dicta. Nostrum voluptatem ratione corporis modi! Nostrum sequi a consequatur delectus, cum quibusdam adipisci aut quia! Beatae iste excepturi vero numquam.</i></p>
+  <!-- <div class="text-center"> -->
+    <img src="assets\landing img.jpg" class="img-fluid px-5" alt="online shopping display image" style="width: 100%; height: 75%;">
+  <!-- </div> -->
+
+  <!-- <p class="text-center mt-3 p-0"><i>An all in one place for buying your Apparels, Electronics and Much more.<br>Aplanet Full of Products just for you!</i></p> -->
+  <p class="text-center mt-3 p-0"> Welcome to</p>
+  <h1 class="text-center mb-4"><b>Shopping Planet</b></h1>
+
+  <hr class="bg-light mx-5">
+  <h2 class="text-center text-warning">Our Best Sellers</h2>
+  <hr class="bg-light mx-5">
+  
+  <br>
+  
+  <!-- a catalog of best sellers -->
   <ion-row>
-    <ion-col class="col-md-4" *ngFor="let card of courselist.slice(0,8)">
+    <ion-col class="col-md-4" *ngFor="let card of itemlist.slice(0,9)">
       <ion-card>
-        <img [src]="card.imageSource" style="width: 100%;" alt="online shopping display image">
+        <img [src]="card.imgsrc" style="width: 100%;" alt="online shopping display image">
         <ion-card-header>
           <ion-card-subtitle>
             {{card.title}}
           </ion-card-subtitle>
           <ion-card-title>
-            <b>Cost: {{card.cost}}</b>
+            <b>Cost: ₹{{card.Cost}}</b> 
+            <button class="btn float-right my-3" (click)="cartfun(card.id)">Add to Cart</button>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>
   </ion-row>
+
+  <br>
+
+  <!-- button takes to any one of the pages -->
   <ion-row>
     <ion-col class="text-center">
-      <button class="btn" style="background-color: #f7ce3e;">
+      <button class="btn" (click)="random_page()">
         View All
       </button>
     </ion-col>
   </ion-row>
-  <!-- <div class="row px-0">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 py-5" *ngFor="let card of cardContent.slice(0,8)">
-              <ion-card [imageSource]="card.imageSource" [title]="card.title" [content]="card.content" [cost]="card.cost"></ion-card>
-          </div>
-        </div>
+  
+  <br>
+  
+  <!-- Ionic Carousal of user reviews-->
+  <ion-slides [options]="slideOptsOne" loop="true">
+    <ion-slide>
+      <div class="silde row">
+        <ion-col class="col d-flex align-items-stretch" *ngFor="let i of [1,2,3]">
+          <ion-card class="d-flex flex-column">
+            <div class="text-center py-3">
+              <img src="assets\user{{i}}.png" style="width: 30%;" alt="online shopping display image">
+            </div>
+            <ion-card-header class="mt-auto mb-auto">
+              <ion-card-title *ngIf="i == 1">
+                Mayank Kumar Singh
+              </ion-card-title>
+              <ion-card-title *ngIf="i == 2">
+                Pragya Kumari
+              </ion-card-title>
+              <ion-card-title *ngIf="i == 3">
+                Mohammed Rahil
+              </ion-card-title>
+              <br>
+              <ion-card-title >
+                A very Good website for good New Developers!
+              </ion-card-title>
+              <ion-card-subtitle >
+                A very thoughtful website made by these young developers! There's even a light theme switcher for users' choice of theme on the website
+                A few bugs here and there but over all a good Start fot them
+              </ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
       </div>
-    </div> -->
-        <!-- <ion-col *ngFor="let card of courselist.slice(0,8)">
-          <ion-card [imageSource]="card.imageSource" [title]="card.title" [content]="card.content" [cost]="card.cost"></ion-card>
-            <ion-card>
-              <img src="https://image.freepik.com/free-vector/online-shopping-concept-digital-marketing-website-mobile-application_43880-332.jpg" alt="">
-            </ion-card>
-        </ion-col> -->
-    <!-- <div class="container text-center px-0 pb-5">
-      <button class="btn btn-primary px-4">View All</button>
-    </div> -->
-    <!-- <div class="container px-0 my-5">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-          <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col m-3 p-0 shadow">
-                <img [src]="cardContent[0].imageSource" style="width: 100%;">
-                <div class="p-3">
-                    <p class="pt-2" style="font-size: 24px;">{{cardContent[0].title}}</p>
-                    <p>
-                        <b>Cost: {{cardContent[0].cost}}</b>
-                    </p>
-                </div>
-              </div>
-              <div class="col m-3 p-0 shadow">
-                <img [src]="cardContent[1].imageSource" style="width: 100%;">
-                <div class="shadow p-3">
-                  <p class="pt-2" style="font-size: 24px;">{{cardContent[1].title}}</p>
-                  <p>
-                    <b>Cost: {{cardContent[1].cost}}</b>
-                  </p>
-                </div>
-              </div>
-              <div class="col m-3 p-0 shadow">
-                <img [src]="cardContent[2].imageSource" style="width: 100%;">
-                <div class="p-3">
-                  <p class="pt-2" style="font-size: 24px;">{{cardContent[2].title}}</p>
-                  <p>
-                      <b>Cost: {{cardContent[2].cost}}</b>
-                  </p>
-              </div>
-              </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="silde row">
+        <ion-col class="col d-flex align-items-stretch" *ngFor="let i of [4,5,6]">
+          <ion-card class="d-flex flex-column">
+            <div class="text-center py-3">
+              <img src="assets\user{{i}}.png" style="width: 30%;" alt="online shopping display image">
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col m-3 p-0 shadow">
-                <img [src]="cardContent[3].imageSource" style="width: 100%;">
-                <div class="p-3">
-                    <p class="pt-2" style="font-size: 24px;">{{cardContent[3].title}}</p>
-                    <p>
-                        <b>Cost: {{cardContent[3].cost}}</b>
-                    </p>
-                </div>
-              </div>
-              <div class="col m-3 p-0 shadow">
-                <img [src]="cardContent[4].imageSource" style="width: 100%;">
-                <div class="shadow p-3">
-                  <p class="pt-2" style="font-size: 24px;">{{cardContent[4].title}}</p>
-                  <p>
-                    <b>Cost: {{cardContent[4].cost}}</b>
-                  </p>
-                </div>
-              </div>
-              <div class="col m-3 p-0 shadow">
-                <img [src]="cardContent[5].imageSource" style="width: 100%;">
-                <div class="p-3">
-                  <p class="pt-2" style="font-size: 24px;">{{cardContent[5].title}}</p>
-                  <p>
-                      <b>Cost: {{cardContent[5].cost}}</b>
-                  </p>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col m-3 p-0 shadow">
-                <img [src]="cardContent[5].imageSource" style="width: 100%;">
-                <div class="p-3">
-                    <p class="pt-2" style="font-size: 24px;">{{cardContent[6].title}}</p>
-                    <p>
-                        <b>Cost: {{cardContent[6].cost}}</b>
-                    </p>
-                </div>
-              </div>
-              <div class="col m-3 p-0 shadow">
-                <img [src]="cardContent[7].imageSource" style="width: 100%;">
-                <div class="shadow p-3">
-                  <p class="pt-2" style="font-size: 24px;">{{cardContent[7].title}}</p>
-                  <p>
-                    <b>Cost: {{cardContent[7].cost}}</b>
-                  </p>
-                </div>
-              </div>
-              <div class="col m-3 p-0 shadow">
-                <img [src]="cardContent[8].imageSource" style="width: 100%;">
-                <div class="p-3">
-                  <p class="pt-2" style="font-size: 24px;">{{cardContent[8].title}}</p>
-                  <p>
-                      <b>Cost: {{cardContent[8].cost}}</b>
-                  </p>
-              </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Prev</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </a>
+            <ion-card-header class="mt-auto mb-auto">
+              <ion-card-title *ngIf="i == 4">
+                Ritesh Goru
+              </ion-card-title>
+              <ion-card-title *ngIf="i == 5">
+                Shantanu Mahakale
+              </ion-card-title>
+              <ion-card-title *ngIf="i == 6">
+                M S R Dinesh
+              </ion-card-title>
+              <ion-card-title >
+                A very Good website by New Developers!
+              </ion-card-title>
+              <ion-card-subtitle >
+                A very thoughtful website made by these young developers! There's even a light theme switcher for users' choice of theme on the website
+                A few bugs here and there but over all a good Start fot them
+              </ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
       </div>
-    </div> -->
-    <div class="fixed">
-      <app-footer></app-footer>
-    </div>
+    </ion-slide>
+  </ion-slides>
+  
+  <br>
+
+  <div class="fixed">
+    <app-footer></app-footer>
+  </div>
 </ion-content>

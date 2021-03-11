@@ -3,33 +3,42 @@
 <ion-content>
   <div class="text-center m-3">
     <h1 class="text-center">A Store Full of all Latest Items</h1>
-    <h5>Check Out Variety Below</h5>
     <img src="assets\j.png" class="img-fluid" alt="Variety Infinite" style="width: 80%;height: 10%;">
   </div>
-  <!-- <ion-row>
-    <ion-col class="col-md-4" *ngFor="let card of courselist.slice(0,8)">
-      <ion-card>
-        <img [src]="card.imageSource" style="width: 100%;" alt="online shopping display image">
-        <ion-card-header>
-          <ion-card-subtitle>
+
+  <!-- 2nd title -->
+  <hr class="bg-light mx-5">
+  <div class="text-center">
+    <h2 style="color:  #f7ce3e;">Check Out Variety Below</h2>
+  </div>
+  <hr class="bg-light mx-5">
+
+  <br>
+
+  <!-- Catalog -->
+  <ion-row>
+    <ion-col class="col-md-3 " *ngFor="let card of othersCatalog">
+      <ion-card class="">
+        <img [src]="card.imgsrc" style="width: 100%;" alt="online shopping display image">
+        <ion-card-header class="mt-auto mb-auto">
+          <ion-card-subtitle >
             {{card.title}}
+            <br>
+            <b>Color:</b> {{card.color}}
           </ion-card-subtitle>
-          <ion-card-title>
-            <b>Cost: {{card.cost}}</b>
+          <ion-card-title >
+            Type: {{card.type}} <br>
+            <b>Cost: ₹{{card.Cost}}/-</b>
+            <br>
+            <button class="btn btn-warning float-right my-3" (click)="cartfun(card.id)">Add to Cart</button>
           </ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>
-  </ion-row> -->
-
-  <ion-row>
-    <ion-col class="text-center">
-      <ion-button>
-        View All
-      </ion-button>
-    </ion-col>
   </ion-row>
   
+  <br>
+
   <div class="fixed">
     <app-footer></app-footer>
   </div>

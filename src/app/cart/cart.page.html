@@ -2,14 +2,42 @@
 
 
 <ion-content>
+  <!-- page's title -->
   <div class="row pl-5 pt-2">
     <h1>
-      Cart Details
+      <b>Cart Details</b>
     </h1>
   </div>
-  <div class="row">
-    <div class="col-sm-8">
+  <!-- list of all products in Cart -->
+  <div class="row text-center">
+    <div class="mx-5 px-5 w-100" *ngFor="let card of userProducts">
       <ion-card>
+        <ion-row>
+          <ion-col class="col-sm-4">
+            <img [src]="card.imgsrc" class="img-fluid" alt="product" >
+          </ion-col>
+          <ion-col class="col-sm-8">
+            <ion-row>    
+              <ion-col class="col-sm-4">
+                <h4 class="card-title">{{card.title}}</h4>
+                <ion-card-subtitle>
+                  <b>Color:</b> {{card.color}}
+                </ion-card-subtitle>   
+              </ion-col>
+              <ion-col class="col-sm-4">
+                <h5>Cost:₹{{card.Cost}}/-</h5> 
+                <ion-card-subtitle>
+                  (Including all taxes)
+                </ion-card-subtitle>
+              </ion-col>
+              <ion-col class="col-sm-4">
+                <h5>Quantity: {{card.quantity}}</h5>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+      <!-- <ion-card>
         <ion-row>
           <ion-col class="col-cm-4">
             <img src="https://www.asa.edu/wp-content/themes/asa/img/holder.png" class="img-fluid" alt="product" >
@@ -37,38 +65,14 @@
             </ion-row>
           </ion-col>
         </ion-row>
-      </ion-card>
-      <ion-card>
-        <ion-row>
-          <ion-col class="col-cm-4">
-            <img src="https://www.asa.edu/wp-content/themes/asa/img/holder.png" class="img-fluid" alt="product" >
-          </ion-col>
-          <ion-col class="col-sm-8">
-            <ion-row>    
-              <ion-col class="col-sm-8">
-                <h4 class="card-title">Product Name</h4>
-                <ion-card-subtitle>
-                  Color: Red
-                </ion-card-subtitle>   
-              </ion-col>
-              <ion-col>
-                <h5>Cost:</h5> 
-                <ion-card-subtitle>
-                  (Including all taxes)
-                </ion-card-subtitle>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <h4 >Quantity: </h4>
-            </ion-row>
-            <ion-row>
-              <h5>Ordered on: </h5>
-            </ion-row>
-          </ion-col>
-        </ion-row>
-      </ion-card>
+      </ion-card> -->
     </div>
-    <div class="col-sm-4">
+  </div>
+  <!-- checkout and payment confirmation -->
+  <div class="row text-center">
+    <div class="col-lg-4"> 
+    </div>
+    <div class="col-lg-4">
       <ion-card>
         <ion-header class="m-3">
           <ion-card-subtitle>
@@ -76,9 +80,9 @@
           </ion-card-subtitle>
           <ion-row>
             <ion-col class="text-center">
-              <form class="form-inline my-lg-4 shadow ml-5">
-                <input class="form-control bg-dark" style="width: 60%;" type="search" placeholder="Enter Coupon Code" aria-label="Search">
-                <button class="btn btn-danger my-2 my-sm-0 rounded-0" style="width: 25%;" type="submit">Apply</button>
+              <form class="form-inline my-lg-4 shadow mx-5">
+                <input class="form-control bg-light" style="width: 70%;" type="search" placeholder="Enter Coupon Code" aria-label="Search">
+                <button class="btn btn-warning my-2 my-sm-0" style="width: 30%;" type="submit">Apply</button>
               </form>
             </ion-col>
           </ion-row>
@@ -92,15 +96,15 @@
               Cart total:
             </ion-col>
             <ion-col>
-
+              <b>{{payment}}</b>
             </ion-col>
           </ion-row> 
           <ion-row class="m-1">
             <ion-col class="col-sm-6">
-              Shipping Charges:
+              Shipping Charges: 
             </ion-col>
             <ion-col>
-              
+              ₹500/-
             </ion-col>
           </ion-row>
           <ion-row class="m-1">
@@ -108,7 +112,7 @@
               Coupon discount:
             </ion-col>
             <ion-col>
-              
+              ₹0/-
             </ion-col>
           </ion-row>
           <ion-row class="border-top m-2">
@@ -118,27 +122,32 @@
               </ion-card-title>
             </ion-col>
             <ion-col>
-              
+             <ion-card-title>
+                ₹{{totalPayment}}/-
+              </ion-card-title>
             </ion-col>
           </ion-row>
           <br>
           <ion-row>
             <ion-col class="text-center">
-              <button class="btn btn-danger my-2 my-sm-0 rounded-0" type="submit">Secure Checout Now</button>
+              <button class="btn btn-warning my-2 my-sm-0" type="submit" (click)="tohome(1)">Secure Checout Now</button>
             </ion-col>
           </ion-row>
         </ion-card-content>
       </ion-card>
     </div>
   </div>
+  <!-- button to home -->
   <div class="row">
     <ion-col class="text-center">
-      <button class="btn btn-danger">
+      <button class="btn btn-warning" (click)="tohome(2)">
         Continue Shopping
       </button>
     </ion-col> 
   </div>  
+  
   <br>
+
   <div class="fixed">
     <app-footer></app-footer>
   </div>

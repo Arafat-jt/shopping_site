@@ -10,11 +10,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent,CardsComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
