@@ -3,7 +3,7 @@
 This is a shopping website made with Ionic in Angular
  ## Objective 
  1. Create a Shopping Dashboard with basic site functionalities such as: login, signup, buy a product, Cart
- 2. Successfully communicatewi the the bakcend (link here: https://github.com/Arafat-jt/backend_shopping_site.git) 
+ 2. Successfully communicate with the the bakcend (link here: https://github.com/Arafat-jt/backend_shopping_site.git) 
  3. Successfully work on the deployed AWS server (link here: http://15.206.181.224/)
 
 ## Clone the Repo
